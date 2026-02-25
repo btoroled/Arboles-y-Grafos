@@ -133,17 +133,41 @@ class BST {
     }
 };
 
-
-int main() {
-    BST<int> bst;
-    for (int i = 1; i <= 20; i++)
-        bst.insert(i);
-
-    bst.eliminar(5);
-    bst.eliminar(15);
-
+void imprimir(std::string titulo, BST<int>& bst) {
+    std::cout << titulo << std::endl;
     bst.inOrder();
     std::cout << bst.height() << std::endl;
+    std::cout << "----" << std::endl;
+}
 
+
+int main() {
+
+    BST<int> bst;
+    for (int i = 1; i <= 20; i++) bst.insert(i);
+    bst.eliminar(5);
+    bst.eliminar(15);
+    imprimir("Caso 1: Ascendente 1..20, delete 5 y 15", bst);
+
+    BST<int> bst1;
+    for (int i = 20; i >= 1; i--) bst.insert(i);
+    bst1.eliminar(20);
+    bst1.eliminar(1);
+    imprimir("Caso 2: Descendente 20..1, delete 20 y 1", bst1);
+
+    BST<int> bst2;
+    std::vector<int> v = {10,5,15,3,7,12,17,1,4,6,8,11,13,16,18};
+    for (int x : v) bst2.insert(x);
+    bst2.eliminar(1);
+    bst2.eliminar(3);
+    bst2.eliminar(5);
+    imprimir("Caso 3: Balanceado, delete hoja/1hijo/2hijos", bst2);
+
+    BST<int> bst3;
+    std::vector<int> v3 = {8,8,8,5,5,10,10,9,11};
+    for (int x : v3) bst3.insert(x);
+    bst3.eliminar(100);
+    bst3.eliminar(8);
+    imprimir("Caso 4: Duplicados ignorados + delete inexistente + delete existente", bst3);
     return 0;
 }

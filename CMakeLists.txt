@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Arboles_y_Grafos
-        p1_bst.cpp)
+        main.cpp)
