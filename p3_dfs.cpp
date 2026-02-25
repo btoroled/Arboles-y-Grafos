@@ -63,8 +63,6 @@ void imprimir(string titulo, Nodo* raiz, int K) {
     cout << "----" << endl;
 }
 
-
-
 int main() {
     Nodo* raiz1 = new Nodo(5);
     raiz1->left = new Nodo(4);
