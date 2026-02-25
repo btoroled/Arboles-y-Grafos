@@ -78,6 +78,14 @@ int profundidad_min(Nodo* raiz) {
     return d;
 }
 
+void probar(string titulo, Nodo* raiz) {
+    cout << titulo << endl;
+    cout << es_completo(raiz) << endl;
+    cout << ancho_max(raiz) << endl;
+    cout << profundidad_min(raiz) << endl;
+    cout << "----" << endl;
+}
+
 int main() {
     // Caso 1
     Nodo* raiz1 = nullptr;
